@@ -13,7 +13,7 @@ public class SpringBootJdbcApplication {
         SpringApplication.run(SpringBootJdbcApplication.class, args);
     }*/
     public static void main(String[] args) {
-        SpringApplication springApplication = new SpringApplication(SpringBootJdbcApplication.class);
-        springApplication.run(args);
+        SpringApplication application = new SpringApplication(SpringBootJdbcApplication.class);
+        application.run(args);
     }
 }
