@@ -29,7 +29,11 @@ public class AccountConroller {
         return accountService.findAccountById(id);
     }
 
-    //TODO 前端用put提交,后台接收不到参数是什么鬼
+    /**
+     * 前端用put提交,后台接收不到参数是什么鬼
+     * 这个是没有问题的,使用put提交的时候,参数形式不能使用form-data,
+     * 要使用x-www-form-urlencoded
+     * */
     @PutMapping(value = "/{id}")
     public String updateAccount(@PathVariable("id")int id,@RequestParam(value ="name",required=false)String name,
                                 @RequestParam(value="money",required=false)Double money){
