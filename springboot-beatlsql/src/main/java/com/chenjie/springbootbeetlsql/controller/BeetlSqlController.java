@@ -37,6 +37,8 @@ public class BeetlSqlController {
 
     /**
      * put方式提交,后台依然拿不到参数,什么鬼
+     * 查了资料,发现写法没有问题,使用put提交的时候,不能使用form-data,
+     * 要使用x-www-form-urlencoded
      * */
     @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
     public  String updateAccount(@PathVariable("id")int id , @RequestParam(value = "name",required = true)String name,
