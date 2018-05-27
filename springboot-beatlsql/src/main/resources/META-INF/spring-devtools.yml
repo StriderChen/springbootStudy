@@ -1,0 +1,4 @@
+restart:
+  include:
+    beetl: /beetl-2.8.2.jar
+    beetlsql: /beetlsql-2.10.4.jar
