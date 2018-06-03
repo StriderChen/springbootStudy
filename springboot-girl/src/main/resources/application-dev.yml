@@ -9,7 +9,30 @@ spring:
     username: root
     password: root
 
+    #配置监控统计拦截的filters,去掉后,监控界面将无法统计sql,'wall'用于防火墙
+    filters: stat,wall,log4j
+    #最大活跃数
+    maxActive: 20
+    #初始化数量
+    initialSize: 1
+    #最大连接等待超时时间
+    maxWait: 5000
+    #打开PSCache,并且指定每个连接PSCache的大小
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    #通过connetionProperties属性来打开mergeSql功能,慢SQL记录
+    connetionProperties: druid.stat.mergeSql
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 5000
+    minEvictableIdleTimeMills: 30000
+    validationQuery: select 1 from dual
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    format-sql: true
+
