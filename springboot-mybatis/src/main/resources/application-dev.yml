@@ -10,7 +10,7 @@ spring:
     #druid相关配置
     druid:
       #监控统计拦截的filters
-      filters: stat
+      filters: stat,wall,log4j2
       driver-class-name: com.mysql.jdbc.Driver
       #基本属性
       url: jdbc:mysql://127.0.0.1:3306/springbootstudy?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
@@ -44,3 +44,9 @@ pagehelper:
   supportMethodsArguments: true
   params: count=countSql
   returnPageInfo: check
+
+
+druid:
+  username: root
+  password: root
+  resetEnable: false
