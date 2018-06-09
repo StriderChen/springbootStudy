@@ -15,7 +15,7 @@ import java.util.List;
  * @Date 2018/6/3 0:16
  * @Description:
  */
-@Service(value = "userService")
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
