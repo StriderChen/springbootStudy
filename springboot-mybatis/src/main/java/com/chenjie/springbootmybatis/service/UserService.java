@@ -16,14 +16,21 @@ public interface UserService {
      * @param user
      * @return
      */
-    int addUser(User user);
+    Integer addUser(User user);
+
+    /**
+     * 增加一个用户
+     * @param user
+     * @return
+     */
+    Integer insertSelective(User user);
 
     /**
      * 删除用户
      * @param userId
      * @return
      */
-    int deleteById(Integer userId);
+    Integer deleteById(Integer userId);
 
     /**
      * 根据ID查找用户
@@ -37,7 +44,7 @@ public interface UserService {
      * @param user
      * @return
      */
-    int updateUserById(User user);
+    Integer updateUserById(User user);
 
     /**
      * 查找所有用户
@@ -51,5 +58,5 @@ public interface UserService {
      * pageNum 开始页数
      * pageSize 每页显示的数据条数
      * */
-    PageInfo<User> findAllUsers(int pageNum, int pageSize);
+    PageInfo<User> findAllUsers(Integer pageNum, Integer pageSize);
 }

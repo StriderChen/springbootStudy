@@ -22,12 +22,17 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     @Override
-    public int addUser(User user) {
+    public Integer addUser(User user) {
         return userDao.addUser(user);
     }
 
     @Override
-    public int deleteById(Integer userId) {
+    public Integer insertSelective(User user) {
+        return userDao.insertSelective(user);
+    }
+
+    @Override
+    public Integer deleteById(Integer userId) {
         return userDao.deleteById(userId);
     }
 
@@ -37,7 +42,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public int updateUserById(User user) {
+    public Integer updateUserById(User user) {
         return userDao.updateUserById(user);
     }
 
@@ -48,7 +53,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public PageInfo<User> findAllUsers(int pageNum, int pageSize) {
+    public PageInfo<User> findAllUsers(Integer pageNum, Integer pageSize) {
         //将参数传给这个方法就可以实现物理分页了，非常简单。
         PageHelper.startPage(pageNum, pageSize);
         List<User> userDomains = userDao.findAllUsers();

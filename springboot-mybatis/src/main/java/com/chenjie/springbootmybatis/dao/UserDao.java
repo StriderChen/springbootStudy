@@ -18,6 +18,7 @@ public interface UserDao {
     int addUser(User user);
 
     /**
+     * 只是更新有内容的字段
      * @param user
      * @return
      */
